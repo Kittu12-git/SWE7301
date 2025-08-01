@@ -1,0 +1,115 @@
+{
+  "info": {
+    "_postman_id": "12345678-abcd-efgh-ijkl-987654321000",
+    "name": "Reporting System API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Agency",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Credit Agency Z\",\n  \"description\": \"Handles DBS checks\"\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/agencies/",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["agencies", ""]
+        }
+      }
+    },
+    {
+      "name": "List Agencies",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://127.0.0.1:8000/agencies/",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["agencies", ""]
+        }
+      }
+    },
+    {
+      "name": "Create Report",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Alice Smith\",\n  \"check_type\": \"DBS\",\n  \"result\": \"Clear\",\n  \"reference_id\": \"DBS001\",\n  \"agency_id\": 1\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/reports/",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["reports", ""]
+        }
+      }
+    },
+    {
+      "name": "List Reports",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://127.0.0.1:8000/reports/",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["reports", ""]
+        }
+      }
+    },
+    {
+      "name": "Get Report by ID",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://127.0.0.1:8000/report/1",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["report", "1"]
+        }
+      }
+    },
+    {
+      "name": "Update Report",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Alice Smith\",\n  \"check_type\": \"DBS\",\n  \"result\": \"Updated Result\",\n  \"reference_id\": \"DBS001\",\n  \"agency_id\": 1\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/report/1",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["report", "1"]
+        }
+      }
+    },
+    {
+      "name": "Delete Report",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "http://127.0.0.1:8000/report/1",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["report", "1"]
+        }
+      }
+    }
+  ]
+}
